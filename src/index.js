@@ -1,18 +1,18 @@
 import React from 'react';
 import ReactDOM from 'react-dom/client';
+import 'bootstrap/dist/css/bootstrap.min.css';
 import './index.css';
-// import App from './App';
 import reportWebVitals from './reportWebVitals';
 // import bootstrap from 'bootstrap';
-import 'bootstrap/dist/css/bootstrap.min.css';
-import AllPokemon from './AllPokemon';
+// import AllPokemon from './AllPokemon';
+import AppRoutes from './AppRoutes';
 
 
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
   <React.StrictMode>
-    <AllPokemon />
+    <AppRoutes />
   </React.StrictMode>
 );
 
