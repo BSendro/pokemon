@@ -43,7 +43,6 @@ function AllPokemon () {
                 {pokemon.map((poke) => {
                     const pokemonId = poke.url.split('/')[6];
                     const imageUrl = `https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/${pokemonId}.png`
-                    console.log(poke.url.split('/'))
                     return (
                         <div key={poke.name} className='card col-md-2 mb-4 mx-3'>
                             <Link to={`/pokemon/${pokemonId}`}>

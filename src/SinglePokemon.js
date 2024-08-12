@@ -1,7 +1,56 @@
-// import AllPokemon from "./AllPokemon";
+import { useParams } from "react-router-dom";
+import { useState, useEffect } from "react";
+import axios from "axios";
 
 function SinglePokemon() {
-    return <>testing</>
+    const [pokemonDetails, setPokemonDetails] = useState(null);
+    const {id} = useParams();
+
+    useEffect(() => {
+        const fetchSingleDetails = async () => {
+            try {
+                const {data} = await axios.get(
+                    `https://pokeapi.co/api/v2/pokemon/${id}/`
+                );
+                setPokemonDetails (data)
+                console.log('Results: ', data)
+                // console.log(pokemonDetails)
+                // return data.results
+            } catch (err) {
+                console.log('Error fetching single pokemon data', err)
+                console.error(err);
+            }
+        }
+
+        fetchSingleDetails();
+    }, [id])
+
+    console.log('pokemon', pokemonDetails)
+    return (
+        <div>
+            <h2>Pokemon Details</h2>
+            {pokemonDetails ? (
+                <div>
+                    <h3>{pokemonDetails.name}</h3>
+                    <img
+                        src={pokemonDetails.sprites.front_default}
+                        alt={pokemonDetails.name}
+                    />
+                    <p>Height: {pokemonDetails.height}</p>
+                    <p>Weight: {pokemonDetails.weight}</p>
+                    <p>Base Experience: {pokemonDetails.base_experience}</p>
+                    <p>
+                        Abilities:{' '}
+                            {pokemonDetails.abilities
+                            .map((ability) => ability.ability.name)
+                            .join(', ')}
+                    </p>
+                </div>
+            ) : (
+            <p>Loading Pokemon Details...</p>
+            )}
+        </div>
+    );
 }
 
 export default SinglePokemon;

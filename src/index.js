@@ -6,6 +6,7 @@ import reportWebVitals from './reportWebVitals';
 // import bootstrap from 'bootstrap';
 // import AllPokemon from './AllPokemon';
 import AppRoutes from './AppRoutes';
+import SinglePokemon from './SinglePokemon';
 
 
 
