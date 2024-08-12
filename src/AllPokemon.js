@@ -37,7 +37,7 @@ function AllPokemon () {
 
     return(
     <>
-        <h1>Pokemon!</h1>
+        <p><h1 align="center">Pokemon!</h1></p>
         <div className='container'>
             <div className='row'>
                 {pokemon.map((poke) => {

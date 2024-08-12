@@ -4,6 +4,7 @@ import AllPokemon from './AllPokemon';
 // import AppRoutes from './AppRoutes';
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 import SinglePokemon from './SinglePokemon';
+// import Navbar from './Navbar'
 
 function App() {
   return (

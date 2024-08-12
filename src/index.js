@@ -7,12 +7,13 @@ import reportWebVitals from './reportWebVitals';
 // import AllPokemon from './AllPokemon';
 import AppRoutes from './AppRoutes';
 import SinglePokemon from './SinglePokemon';
-
+import Navbar from './Navbar'
 
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
   <React.StrictMode>
+    <Navbar />
     <AppRoutes />
   </React.StrictMode>
 );
